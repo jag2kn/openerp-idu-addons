@@ -57,15 +57,17 @@ fi
 
 ##Instalar geojson para geoengine
 cd /tmp
-wget http://pypi.python.org/packages/source/g/geojson/geojson-1.0.tar.gz
-tar zxvf geojson-1.0.tar.gz
-cd geojson-1.0
+wget http://pypi.python.org/packages/source/g/geojson/geojson-1.0.1.tar.gz
+tar zxvf geojson-1.0.1.tar.gz
+cd geojson-1.0.1
 sudo python setup.py install
-rm geojson-1.0.tar.gz geojson-1.0 -rf
+rm geojson-1.0.1.tar.gz geojson-1.0.1 -rf
 
 #Instalar c2c-geoengine - usado por ocs
 cd $ADDONS_PATH
-sudo bzr branch  http://bazaar.launchpad.net/~c2c/c2c-geoengine-addons/trunk/ c2c-geoengine-addons
+#sudo bzr branch  http://bazaar.launchpad.net/~c2c/c2c-geoengine-addons/trunk/ c2c-geoengine-addons
+sudo bzr branch lp:geospatial-addons/7.0 c2c-geoengine-addons
+
 
 #Descomprimir archivos de cartografia de bogota
 bunzip2 -k "$ADDONS_PATH/addons-idu/data_idu/sql/*.bz2"
